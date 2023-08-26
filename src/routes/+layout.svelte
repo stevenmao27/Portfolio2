@@ -8,9 +8,6 @@
     let coords = spring({ x: 0, y: 0 }, { stiffness: 0.25, damping: 0.5 });
     let radius = spring(10, { stiffness: 0.1, damping: 0.25 });
 
-    document.addEventListener('mousedown', () => radius.set(5));
-    document.addEventListener('mouseup', () => radius.set(10));
-
     function moveCursor(e) {
         coords.set({ x: e.clientX, y: e.clientY });
     }
@@ -33,6 +30,8 @@
 
     onMount(() => {
         mounted = true;
+        document.addEventListener('mousedown', () => radius.set(5));
+        document.addEventListener('mouseup', () => radius.set(10));
     });
 </script>
 
