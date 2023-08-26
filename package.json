@@ -13,6 +13,8 @@
 		"@sveltejs/kit": "^1.20.4",
 		"autoprefixer": "^10.4.15",
 		"postcss": "^8.4.28",
+		"prettier": "^3.0.2",
+		"prettier-plugin-tailwindcss": "^0.5.3",
 		"svelte": "^4.0.5",
 		"tailwindcss": "^3.3.3",
 		"vite": "^4.4.2"
