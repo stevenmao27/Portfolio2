@@ -24,7 +24,7 @@
 
             headerCarousel = headers[wordIndex]
                 .split('')
-                .map((letter, index) => (index < loopIndex) ? letter : letters[Math.floor(Math.random() * letters.length)])
+                .map((letter, index) => (index < loopIndex || letter === ' ') ? letter : letters[Math.floor(Math.random() * letters.length)])
                 .join('');
 
             loopIndex += 1 / 2;

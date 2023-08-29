@@ -35,7 +35,7 @@
     });
 </script>
 
-<svg role="none" on:mousedown={() => console.log('mousedown')} on:mouseup={() => radius.set(10)} class="fixed w-screen h-screen pointer-events-none">
+<svg role="none" on:mousedown={() => console.log('mousedown')} on:mouseup={() => radius.set(10)} class="fixed w-screen h-screen pointer-events-none z-20">
     <circle cx={$coords.x} cy={$coords.y} r={$radius} stroke-width=1 fill=none class=" fill-white/50" />
 </svg>
 
