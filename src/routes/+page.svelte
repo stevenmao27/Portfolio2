@@ -38,7 +38,7 @@
         <li>See my <a href="https://linkedin.com/in/steven-mao" class="underline-link">Linkedin</a> or my <a href="https://github.com/stevenmao27" class="underline-link">Github</a> profile</li>
         <li>Interested in performance-critical programming (C++/Rust) and UI/UX design. Open to anything and everything.</li>
         <li>Last year's <a href="https://stevenmao27.github.io/Portfolio" class="underline-link">Portfolio Website</a> for UI</li>
-        <li><a href="people.tamu.edu/~stevenm27" class="underline-link">Dual-Style Portfolio</a> that may be unavailable. Source can be found <a href="https://github.com/stevenmao27/Dual-Style-Portfolio" class="underline-link">here</a></li>
+        <li><a href="http://people.tamu.edu/~stevenm27" class="underline-link">Dual-Style Portfolio</a> that may be unavailable. Source can be found <a href="https://github.com/stevenmao27/Dual-Style-Portfolio" class="underline-link">here</a></li>
     </ul>
 
     <h2 class="text-lg">Rough Skill Tier List:</h2>
