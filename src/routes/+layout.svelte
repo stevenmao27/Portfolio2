@@ -5,7 +5,7 @@
     import { page } from "$app/stores";
 
     let mounted = false;
-    let coords = spring({ x: 0, y: 0 }, { stiffness: 0.25, damping: 0.5 });
+    let coords = spring({ x: 0, y: 0 }, { stiffness: 0.1, damping: 0.5 });
     let radius = spring(10, { stiffness: 0.1, damping: 0.25 });
 
     function moveCursor(e) {
@@ -49,9 +49,9 @@
         min-height: 100vh;
         color: white;
         background-color: rgb(30, 30, 30);
-        cursor: none;
+        /* cursor: none; */
     }
-    :global(a) {
+    /* :global(a) {
         cursor: none;
-    }
+    } */
 </style>
