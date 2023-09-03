@@ -1,5 +1,5 @@
 <script>
-    export let headers = ['SOFTWARE ENGINEER', 'SYSTEMS PROGRAMMER', 'WEB DESIGNER', 'TEXAS A&M UNIVERSITY', 'FULL STACK DEV', 'PIANIST'];
+    export let headers = ['SOFTWARE ENGINEER', 'SYSTEMS PROGRAMMER', 'UI/UX DESIGNER', 'TEXAS A&M UNIVERSITY', 'FULL STACK DEV'];
     export let framePeriod = 30; // minimum time between frames in ms
 
     import { onMount } from "svelte";
@@ -52,5 +52,5 @@
     });
 </script>
 
-<h2 bind:this={element} class='text-6xl font-mono'>{headerCarousel}</h2>
+<h2 bind:this={element} class='text-6xl font-mono font-bold'>{headerCarousel}</h2>
 
