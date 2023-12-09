@@ -2,11 +2,27 @@
 	import WordCarousel from "./WordCarousel.svelte";
     import PrimaryButton from "./PrimaryButton.svelte";
     import ArrowSvg from "$lib/arrow-svg.svelte";
+	import { onMount } from "svelte";
+
+    onMount(() => {
+        let observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    observer.unobserve(entry.target);
+                }
+            })
+        });
+
+        document.querySelectorAll('#about h2').forEach(el => observer.observe(el));
+        document.querySelectorAll('#about li').forEach(el => observer.observe(el));
+    })
+    
 </script>
 
-<div id="loading" class="fixed w-screen h-screen bg-black flex justify-center items-center z-10">
+<div id="loading" class="fixed w-screen h-screen bg-sbdarkgray flex justify-center items-center z-10">
     <svg class="w-[100px] h-[100px]">
-        <circle cx=50 cy=50 r=44 stroke-width="5" fill="none" class="stroke-white -rotate-90 origin-center" stroke-linecap="round" stroke-dasharray=280 stroke-dashoffset=280 />
+        <circle cx=50 cy=50 r=44 stroke-width="4" fill="none" class="stroke-white -rotate-90 origin-center" stroke-linecap="round" stroke-dasharray=280 stroke-dashoffset=280 />
     </svg>
 </div>
 
@@ -19,8 +35,8 @@
     </div>
 
     <div class="flex flex-col justify-center items-center gap-16">
-        <a href="/experience" class="py-2 font-medium border-b-2">Experience (Empty) <ArrowSvg /></a>
-        <a href="/projects" class="py-2 font-medium border-b-2">Projects (Empty) <ArrowSvg /></a>
+        <a href="/experience" class="py-2 text-lg font-medium border-b-2">Experience<ArrowSvg /></a>
+        <a href="/projects" class="py-2 text-lg font-medium border-b-2">Projects (Empty) <ArrowSvg /></a>
         <PrimaryButton href="/resume" text="Resume" />
     </div>
 
@@ -30,7 +46,7 @@
 
     <h1 class="text-4xl m-4">About Me</h1>
 
-    <h2 class="text-lg">Hello! This is my 4th personal website in development. I plan to use this <a href="https://www.riotgames.com/en/news/complementary-visual-design-in-spirit-blossom" class="underline-link">color palette</a> in a glassmorphic style.</h2>
+    <h2 class="text-lg">Hello! This is my 4th personal website in development. I'm using this <a href="https://www.riotgames.com/en/news/complementary-visual-design-in-spirit-blossom" class="underline-link">color palette</a>.</h2>
     <ul class="list-disc pl-4 flex flex-col gap-2">
         <li>Former Software Engineer Intern @ VISA</li>
         <li>Honors Computer Science Major @ TAMU, Class of 2025</li>
@@ -42,7 +58,7 @@
         <li><a href="http://people.tamu.edu/~stevenm27" class="underline-link">Dual-Style Portfolio</a> single week course project (may be unavailable). Source can be found <a href="https://github.com/stevenmao27/Dual-Style-Portfolio" class="underline-link">here</a></li>
     </ul>
 
-    <h2 class="text-lg mt-8">Rough Skill Tier List:</h2>
+    <h2 class="text-lg mt-8">Skills List:</h2>
     <ul class="list-disc pl-4 flex flex-col gap-2">
         <li>Highly Confident in Python, CSS, and my ability to learn!</li>
         <li>Professional experience in Java + Spring Boot + Kafka</li>
@@ -63,6 +79,33 @@
 </div>
 
 <style>
+    h2 {
+        opacity: 0;
+        transition: all 0.75s ease;
+    }
+    li {
+        opacity: 0;
+        transition: all 0.75s ease;
+    }
+    .underline-link {
+        /* @apply relative after:absolute after:left-0 after:bottom-0 after:w-full after:h-1 after:bg-sbgreen after:-z-10 after:hover:h-full after:transition-all; */
+        position: relative;
+    }
+    .underline-link::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 0.25rem;
+        background-color: rgb(107, 214, 187);
+        z-index: -10;
+        transition: all 0.15s ease-in-out;
+    }
+    .underline-link:hover::after {
+        height: 100%;
+    }
+
     #loading {
         animation: fade 2s ease 1.5s forwards;
     }
@@ -89,24 +132,5 @@
         100% {
             stroke-dashoffset: 0;
         }
-    }
-
-    .underline-link {
-        /* @apply relative after:absolute after:left-0 after:bottom-0 after:w-full after:h-1 after:bg-sbgreen after:-z-10 after:hover:h-full after:transition-all; */
-        position: relative;
-    }
-    .underline-link::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        height: 0.25rem;
-        background-color: rgb(107, 214, 187);
-        z-index: -10;
-        transition: all 0.15s ease-in-out;
-    }
-    .underline-link:hover::after {
-        height: 100%;
     }
 </style>

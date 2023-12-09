@@ -58,7 +58,7 @@
         padding: 0;
         min-height: 100vh;
         color: white;
-        background-color: rgb(46 46 46);
+        background-color: rgb(33, 33, 36);
         font-family: 'Montserrat', sans-serif;
     }
 </style>
